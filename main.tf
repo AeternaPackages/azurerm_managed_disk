@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.managed_disks : {
       for k2, v2 in coalesce(v1.managed_disk_sas_tokens, {}) :
       "${k1}/${k2}" => merge(v2, {
-        managed_disk_id = module.managed_disks.managed_disks["${k1}"].id
+        managed_disk_id = module.managed_disks.managed_disks_id["${k1}"]
       })
     }
   ]...)

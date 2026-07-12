@@ -1,4 +1,9 @@
 # --- azurerm_managed_disk ---
+output "managed_disks_id" {
+  description = "Map of id values across all managed_disks, keyed the same as var.managed_disks"
+  value       = module.managed_disks.managed_disks_id
+}
+
 output "managed_disks_create_option" {
   description = "Map of create_option values across all managed_disks, keyed the same as var.managed_disks"
   value       = module.managed_disks.managed_disks_create_option
@@ -175,6 +180,11 @@ output "managed_disks_zone" {
 }
 
 # --- azurerm_managed_disk_sas_token ---
+output "managed_disk_sas_tokens_id" {
+  description = "Map of id values across all managed_disk_sas_tokens, keyed the same as var.managed_disk_sas_tokens"
+  value       = module.managed_disk_sas_tokens.managed_disk_sas_tokens_id
+}
+
 output "managed_disk_sas_tokens_access_level" {
   description = "Map of access_level values across all managed_disk_sas_tokens, keyed the same as var.managed_disk_sas_tokens"
   value       = module.managed_disk_sas_tokens.managed_disk_sas_tokens_access_level
